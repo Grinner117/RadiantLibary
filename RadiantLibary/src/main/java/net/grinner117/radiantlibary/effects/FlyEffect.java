@@ -1,5 +1,8 @@
+
 package net.grinner117.radiantlibary.effects;
 
+import net.grinner117.radiantlibary.networking.Networking;
+import net.grinner117.radiantlibary.networking.PacketUpdateFlight;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -8,7 +11,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.player.Player;
 
 public class FlyEffect extends MobEffect {
-	protected FlyEffect(MobEffectCategory p_76397_1_, int p_76397_2_) {
+	protected FlyEffect() {
 		super(MobEffectCategory.BENEFICIAL, 2039587);
 	}
 

@@ -21,7 +21,7 @@ public class ModEffects {
 //	public static final RegistryObject<MobEffect> SCRYING_EFFECT = EFFECTS.register(SCRYING, ScryingEffect::new);
 //	public static final RegistryObject<MobEffect> GLIDE_EFFECT = EFFECTS.register(GLIDE, GlideEffect::new);
 //	public static final RegistryObject<MobEffect> SNARE_EFFECT = EFFECTS.register(SNARE, SnareEffect::new);
-	public static final RegistryObject<MobEffect> FLY_EFFECT = EFFECTS.register(Fly, FlyEffect::new);
+	public static final RegistryObject<MobEffect> FLY_EFFECT = EFFECTS.register(FLY, FlyEffect::new);
 //	public static final RegistryObject<MobEffect> GRAVITY_EFFECT = EFFECTS.register(GRAVITY, GravityEffect::new);
 //	public static final RegistryObject<MobEffect> SPELL_DAMAGE_EFFECT = EFFECTS.register(SPELL_DAMAGE, () -> new PublicEffect(MobEffectCategory.BENEFICIAL, new ParticleColor(30, 200, 200).getColor()));
 //	public static final RegistryObject<MobEffect> FAMILIAR_SICKNESS_EFFECT = EFFECTS.register(FAMILIAR_SICKNESS, () -> new PublicEffect(MobEffectCategory.NEUTRAL, new ParticleColor(30, 200, 200).getColor(), new ArrayList<>()));

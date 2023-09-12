@@ -2,6 +2,7 @@ package net.grinner117.radiantlibary;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,6 +20,7 @@ import org.slf4j.Logger;
 public class RadiantLibary {
 	public static final String MODID = "radiantlibary";
 	private static final Logger LOGGER = LogUtils.getLogger();
+	public static CommandSourceStack proxy;
 
 	public RadiantLibary() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
