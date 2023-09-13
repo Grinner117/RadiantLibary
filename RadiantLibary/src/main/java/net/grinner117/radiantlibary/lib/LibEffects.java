@@ -1,7 +1,7 @@
 package net.grinner117.radiantlibary.lib;
 
 public class LibEffects {
-	public static final String SHOCKED = "shocked";
+	public static final String LIGHTING = "lighting";
 	public static final String HEX = "hex";
 	public static final String MAGIC_FIND = "magic_find";
 	public static final String BOUNCE = "bounce";
@@ -11,11 +11,6 @@ public class LibEffects {
 	public static final String SCRYING = "scrying";
 	public static final String FLY = "fly";
 
-	public static final String MANA_REGEN = "mana_regen";
-	public static final String SPELL_DAMAGE = "spell_damage";
-
-	public static final String FAMILIAR_SICKNESS = "familiar_sickness";
-	public static final String SUMMONING_SICKNESS = "summoning_sickness";
 	public static final String RECOVERY = "recovery";
 	public static final String BLAST = "blasting";
 	public static final String FREEZING = "freezing";

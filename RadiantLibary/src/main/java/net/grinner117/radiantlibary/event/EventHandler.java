@@ -35,17 +35,6 @@ public class EventHandler {
 
 	}
 
-	@SubscribeEvent
-	public static void clientTickEnd(TickEvent.ClientTickEvent event) {
-		if (event.phase == TickEvent.Phase.END) {
-			ClientInfo.ticksInGame++;
-			if (ClientInfo.redTicks()) {
-				ClientInfo.redOverlayTicks--;
-			}
-		}
-	}
-
-
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public static void onGlideTick(TickEvent.PlayerTickEvent event) {
 		if (event.player.hasEffect(ModEffects.FLY_EFFECT.get())
@@ -64,13 +53,13 @@ public class EventHandler {
 			}
 		}
 
-		if (e.getEntity() != null && e.getSource() == DamageSource.LIGHTNING_BOLT && e.getEntity().hasEffect(ModEffects.SHOCKED_EFFECT.get())) {
-			float damage = e.getAmount() + 3.0f + 3.0f * e.getEntity().getEffect(ModEffects.SHOCKED_EFFECT.get()).getAmplifier();
+		if (e.getEntity() != null && e.getSource() == DamageSource.LIGHTNING_BOLT && e.getEntity().hasEffect(ModEffects.LIGHTING_EFFECT.get())) {
+			float damage = e.getAmount() + 3.0f + 3.0f * e.getEntity().getEffect(ModEffects.LIGHTING_EFFECT.get()).getAmplifier();
 			e.setAmount(Math.max(0, damage));
 		}
 		LivingEntity entity = e.getEntity();
 		if (entity != null && entity.hasEffect(ModEffects.HEX_EFFECT.get()) &&
-				(entity.hasEffect(ModEffects.POISON) || entity.hasEffect(ModEffects.WITHER) || entity.isOnFire() || entity.hasEffect(ModEffects.SHOCKED_EFFECT.get()))) {
+				(entity.hasEffect(ModEffects.POISON) || entity.hasEffect(ModEffects.WITHER) || entity.isOnFire() || entity.hasEffect(ModEffects.LIGHTING_EFFECT.get()))) {
 			e.setAmount(e.getAmount() + 0.5f + 0.33f * entity.getEffect(ModEffects.HEX_EFFECT.get()).getAmplifier());
 		}
 		if (entity == null)
