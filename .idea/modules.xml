@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadiantLibary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RadiantLibary.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadiantLibary.test.iml" filepath="$PROJECT_DIR$/.idea/modules/RadiantLibary.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadiantLibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RadiantLibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RadiantLibrary.test.iml" filepath="$PROJECT_DIR$/.idea/modules/RadiantLibrary.test.iml" />
     </modules>
   </component>
 </project>
