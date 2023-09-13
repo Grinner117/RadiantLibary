@@ -1,8 +1,8 @@
 package net.grinner117.radiantlibary.event;
 
 
-		import net.minecraft.world.entity.LivingEntity;
-		import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.phys.Vec3;
 
 public class BounceEvent implements ITimedEvent {
 	LivingEntity livingEntity;

@@ -9,12 +9,8 @@ public class LibEffects {
 	public static final String GLIDE = "glide";
 	public static final String GHOST = "ghost";
 	public static final String FLY = "fly";
-
 	public static final String RECOVERY = "recovery";
 	public static final String BLAST = "blasting";
 	public static final String FREEZING = "freezing";
 	public static final String DEFENCE = "shielding";
-
-
-
 }

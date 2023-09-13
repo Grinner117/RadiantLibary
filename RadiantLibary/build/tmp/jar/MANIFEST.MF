@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: radiantlibary
+Specification-Vendor: radiantlibarysareus
+Specification-Version: 1
+Implementation-Title: RadiantLibary
+Implementation-Version: 1.19.2 - 1.0
+Implementation-Vendor: radiantlibarysareus
+Implementation-Timestamp: 2023-09-13T18:46:21+1000
+

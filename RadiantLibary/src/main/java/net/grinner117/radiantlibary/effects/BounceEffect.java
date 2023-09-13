@@ -1,6 +1,6 @@
 package net.grinner117.radiantlibary.effects;
 
-		import net.grinner117.radiantlibary.RadiantLibary;
+		import net.grinner117.radiantlibary.RadiantLibrary;
 		import net.grinner117.radiantlibary.event.BounceEvent;
 		import net.grinner117.radiantlibary.event.EventQueue;
 		import net.minecraft.world.effect.MobEffect;
@@ -9,9 +9,7 @@ package net.grinner117.radiantlibary.effects;
 		import net.minecraft.world.entity.player.Player;
 		import net.minecraftforge.event.entity.living.LivingFallEvent;
 		import net.minecraftforge.eventbus.api.SubscribeEvent;
-		import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = RadiantLibary.MODID)
 public class BounceEffect extends MobEffect {
 	public BounceEffect() {
 		super(MobEffectCategory.BENEFICIAL, 2039587);

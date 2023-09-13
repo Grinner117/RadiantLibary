@@ -20,9 +20,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-@Mod(RadiantLibary.MODID)
-public class RadiantLibary {
-	public static final String MODID = "radiantlibary";
+@Mod(RadiantLibrary.MODID)
+public class RadiantLibrary {
+	public static final String MODID = "radiantlibrary";
 	private static final Logger LOGGER = LogUtils.getLogger();
 	public static CommandSourceStack proxy;
 
@@ -49,7 +49,7 @@ public class RadiantLibary {
 	}
 
 	@SuppressWarnings("deprecation")
-	public RadiantLibary() {
+	public RadiantLibrary() {
 
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> Mod.EventBusSubscriber.Bus.FORGE.bus().get().register(ClientEventHandler.class));
 
@@ -58,12 +58,14 @@ public class RadiantLibary {
 		modEventBus.addListener(this::clientSetup);
 		MinecraftForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::commonSetup);
-	}
+		ModEffects.EFFECTS.register(modEventBus);
+			}
 
 	public void setup(final FMLCommonSetupEvent event) {
 		Networking.registerMessages();
 		event.enqueueWork(ModEffects::addRecipes);
 		event.enqueueWork(() -> {
+
 		});
 	}
 

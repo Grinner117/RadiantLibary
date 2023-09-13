@@ -12,22 +12,18 @@ import net.minecraft.world.entity.player.Player;
 
 public class FlyEffect extends MobEffect {
 	protected FlyEffect() {
-		super(MobEffectCategory.BENEFICIAL, 2039587);
+		super(MobEffectCategory.BENEFICIAL, 0x00ff00);
 	}
-
-
 	@Override
 	public boolean isDurationEffectTick(int p_76397_1_, int p_76397_2_) {
 		return true;
 	}
-
 	@Override
 	public void applyEffectTick(LivingEntity entity, int p_76394_2_) {
 		if (entity instanceof Player player) {
 			player.getAbilities().mayfly = (player.isCreative() || entity.isSpectator()) || entity.getEffect(ModEffects.FLY_EFFECT.get()).getDuration() > 2;
 		}
 	}
-
 
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap p_111187_2_, int p_111187_3_) {
