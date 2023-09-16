@@ -16,11 +16,10 @@ license = "All rights reserved"
 [[mods]] #mandatory
 modId = "radiantlibrary" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-# ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version = "${file.jarVersion}" #mandatory
 # A display name for the mod
-displayName = "Radiant Libary" #mandatory
+displayName = "Radiant Library" #mandatory
 
 logoFile = "examplemod.png" #optional
 # A text field displayed in the mod UI
@@ -28,7 +27,7 @@ credits = "To the Love of my Life; you gave me new breath"
 authors = "Grinner117"
 description = '''
 
-This Mod adds Potion effects to Libary
+This Mod adds Potion effects to Library
 
 '''
 

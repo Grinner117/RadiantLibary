@@ -1,5 +1,6 @@
 package net.grinner117.radiantlibrary.effects;
 
+import net.grinner117.radiantlibrary.RadiantLibrary;
 import net.grinner117.radiantlibrary.event.BounceEvent;
 import net.grinner117.radiantlibrary.event.EventQueue;
 import net.minecraft.world.effect.MobEffect;
@@ -8,16 +9,19 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
+@Mod.EventBusSubscriber(modid = RadiantLibrary.MODID)
 public class BounceEffect extends MobEffect {
 	public BounceEffect() {
 		super(MobEffectCategory.BENEFICIAL, 2039587);
 	}
 
+	// Adapted from Tinkers https://github.com/SlimeKnights/TinkersConstruct/blob/7df8a5dd62a3b731e59250c49300faadc24501d0/src/main/java/slimeknights/tconstruct/gadgets/GadgetEvents.java
 	@SubscribeEvent
 	public static void onFall(LivingFallEvent event) {
 		LivingEntity entity = event.getEntity();
-		if (entity == null || !entity.hasEffect(net.grinner117.radiantlibrary.effects.ModEffects.BOUNCE_EFFECT.get())) {
+		if (entity == null || !entity.hasEffect(ModEffects.BOUNCE_EFFECT.get())) {
 			return;
 		}
 		boolean isPlayer = entity instanceof Player;

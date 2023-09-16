@@ -31,7 +31,6 @@ public class Networking {
 				PacketUpdateFlight::toBytes,
 				PacketUpdateFlight::new,
 				PacketUpdateFlight::handle);
-
    	}
 
 	public static void sendToNearby(Level world, BlockPos pos, Object toSend) {
