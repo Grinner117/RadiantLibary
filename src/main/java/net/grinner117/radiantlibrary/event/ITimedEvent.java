@@ -3,10 +3,9 @@ package net.grinner117.radiantlibrary.event;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.event.TickEvent;
 
-
 public interface ITimedEvent {
 
-	default void tickEvent(TickEvent event) {
+	default void tickEvent(TickEvent event){
 		tick(event.side.isServer());
 	}
 

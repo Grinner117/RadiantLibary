@@ -1,6 +1,7 @@
-package net.grinner117.radiantlibrary.networking;
+package net.grinner117.radiantlibrary.networking.network;
 
 import net.grinner117.radiantlibrary.RadiantLibrary;
+import net.grinner117.radiantlibrary.networking.PacketUpdateFlight;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -11,7 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
-
 
 public class Networking {
 	public static SimpleChannel INSTANCE;
@@ -31,7 +31,8 @@ public class Networking {
 				PacketUpdateFlight::toBytes,
 				PacketUpdateFlight::new,
 				PacketUpdateFlight::handle);
-   	}
+
+	}
 
 	public static void sendToNearby(Level world, BlockPos pos, Object toSend) {
 		if (world instanceof ServerLevel ws) {

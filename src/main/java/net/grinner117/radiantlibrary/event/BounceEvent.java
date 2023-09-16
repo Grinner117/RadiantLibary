@@ -1,6 +1,5 @@
 package net.grinner117.radiantlibrary.event;
 
-
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
@@ -14,6 +13,7 @@ public class BounceEvent implements ITimedEvent {
 		this.oldY = oldY;
 	}
 
+	@Override
 	public void tick(boolean serverSide) {
 		duration++;
 		if (duration == 1) {
@@ -24,6 +24,7 @@ public class BounceEvent implements ITimedEvent {
 		}
 	}
 
+	@Override
 	public boolean isExpired() {
 		return duration >= 1;
 	}

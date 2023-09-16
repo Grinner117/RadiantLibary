@@ -1,7 +1,5 @@
-
 package net.grinner117.radiantlibrary.effects;
 
-import net.grinner117.radiantlibrary.networking.Networking;
 import net.grinner117.radiantlibrary.networking.PacketUpdateFlight;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
@@ -12,8 +10,9 @@ import net.minecraft.world.entity.player.Player;
 
 public class FlyEffect extends MobEffect {
 	protected FlyEffect() {
-		super(MobEffectCategory.BENEFICIAL, 0x00ff00);
+		super(MobEffectCategory.BENEFICIAL, 2039587);
 	}
+
 
 	@Override
 	public boolean isDurationEffectTick(int p_76397_1_, int p_76397_2_) {
@@ -27,6 +26,7 @@ public class FlyEffect extends MobEffect {
 		}
 	}
 
+
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap p_111187_2_, int p_111187_3_) {
 		super.removeAttributeModifiers(entity, p_111187_2_, p_111187_3_);
@@ -34,7 +34,7 @@ public class FlyEffect extends MobEffect {
 			boolean canFly = player.isCreative() || player.isSpectator();
 			player.getAbilities().mayfly = canFly;
 			player.getAbilities().flying = canFly;
-			Networking.sendToPlayerClient(new PacketUpdateFlight(canFly, canFly), (ServerPlayer) player);
+			net.grinner117.radiantlibrary.networking.network.Networking.sendToPlayerClient(new PacketUpdateFlight(canFly, canFly), (ServerPlayer) player);
 		}
 	}
 }

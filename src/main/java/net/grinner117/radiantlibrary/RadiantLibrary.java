@@ -3,7 +3,6 @@ package net.grinner117.radiantlibrary;
 import com.mojang.logging.LogUtils;
 import net.grinner117.radiantlibrary.effects.ModEffects;
 import net.grinner117.radiantlibrary.event.ClientEventHandler;
-import net.grinner117.radiantlibrary.networking.Networking;
 import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.level.block.Blocks;
@@ -26,6 +25,19 @@ public class RadiantLibrary {
 	private static final Logger LOGGER = LogUtils.getLogger();
 	public static CommandSourceStack proxy;
 
+	@SuppressWarnings("deprecation")
+	public RadiantLibrary() {
+
+		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> Mod.EventBusSubscriber.Bus.FORGE.bus().get().register(ClientEventHandler.class));
+
+		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		modEventBus.addListener(this::setup);
+		modEventBus.addListener(this::clientSetup);
+		MinecraftForge.EVENT_BUS.register(this);
+		modEventBus.addListener(this::commonSetup);
+		ModEffects.EFFECTS.register(modEventBus);
+	}
+
 	private void commonSetup(final FMLCommonSetupEvent event) {
 		// Some common setup code
 		LOGGER.info("HELLO FROM COMMON SETUP");
@@ -38,31 +50,8 @@ public class RadiantLibrary {
 		LOGGER.info("HELLO from server starting");
 	}
 
-	@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-	public static class ClientModEvents {
-		@SubscribeEvent
-		public static void onClientSetup(FMLClientSetupEvent event) {
-			// Some client setup code
-			LOGGER.info("HELLO FROM CLIENT SETUP");
-			LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-		}
-	}
-
-	@SuppressWarnings("deprecation")
-	public RadiantLibrary() {
-
-		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> Mod.EventBusSubscriber.Bus.FORGE.bus().get().register(ClientEventHandler.class));
-
-		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-		modEventBus.addListener(this::setup);
-		modEventBus.addListener(this::clientSetup);
-		MinecraftForge.EVENT_BUS.register(this);
-		modEventBus.addListener(this::commonSetup);
-		ModEffects.EFFECTS.register(modEventBus);
-			}
-
 	public void setup(final FMLCommonSetupEvent event) {
-		Networking.registerMessages();
+		net.grinner117.radiantlibrary.networking.network.Networking.registerMessages();
 		event.enqueueWork(ModEffects::addRecipes);
 		event.enqueueWork(() -> {
 
@@ -75,6 +64,16 @@ public class RadiantLibrary {
 		try {
 			Class.forName("net.optifine.Config");
 		} catch (Exception e) {
+		}
+	}
+
+	@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+	public static class ClientModEvents {
+		@SubscribeEvent
+		public static void onClientSetup(FMLClientSetupEvent event) {
+			// Some client setup code
+			LOGGER.info("HELLO FROM CLIENT SETUP");
+			LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 		}
 	}
 }
