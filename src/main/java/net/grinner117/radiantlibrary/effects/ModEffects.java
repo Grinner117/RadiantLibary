@@ -12,7 +12,7 @@ public class ModEffects {
 
 	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MODID);
 	public static final RegistryObject<MobEffect> NULLCURSE_EFFECT = EFFECTS.register(NULLCURSE, NullCurseEffect::new);
-	public static final RegistryObject<MobEffect> LIGHTING_EFFECT = EFFECTS.register(LIGHTING, LightingEffect::new);
+	public static final RegistryObject<MobEffect> LIGHTNING_EFFECT = EFFECTS.register(LIGHTING, LightningEffect::new);
 	public static final RegistryObject<MobEffect> GHOST_EFFECT = EFFECTS.register(GHOST, GhostEffect::new);
 	public static final RegistryObject<MobEffect> GLIDE_EFFECT = EFFECTS.register(GLIDE, GlideEffect::new);
 	public static final RegistryObject<MobEffect> SNARE_EFFECT = EFFECTS.register(SNARE, SnareEffect::new);
