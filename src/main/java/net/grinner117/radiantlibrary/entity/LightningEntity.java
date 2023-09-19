@@ -107,11 +107,11 @@ public class LightningEntity extends LightningBolt {
 							continue;
 						entity.thunderHit((ServerLevel) this.level, this);
 						this.setDamage(origDamage);
-						if (!level.isClientSide && !hitEntities.contains(entity.getId()) && entity instanceof LivingEntity) {
-							MobEffectInstance effectInstance = ((LivingEntity) entity).getEffect(ModEffects.LIGHTNING_EFFECT.get());
-							int amp = effectInstance != null ? effectInstance.getAmplifier() : -1;
-							((LivingEntity) entity).addEffect(new MobEffectInstance(ModEffects.LIGHTNING_EFFECT.get(), 200 + 10 * 20 * extendTimes, Math.min(2, amp + 1)));
-						}
+//						if (!level.isClientSide && !hitEntities.contains(entity.getId()) && entity instanceof LivingEntity) {
+//							MobEffectInstance effectInstance = ((LivingEntity) entity).getEffect(ModEffects.LIGHTNING_EFFECT.get());
+//							int amp = effectInstance != null ? effectInstance.getAmplifier() : -1;
+//							((LivingEntity) entity).addEffect(new MobEffectInstance(ModEffects.LIGHTNING_EFFECT.get(), 200 + 10 * 20 * extendTimes, Math.min(2, amp + 1)));
+//						}
 						if (!level.isClientSide && !hitEntities.contains(entity.getId()))
 							hitEntities.add(entity.getId());
 

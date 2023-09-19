@@ -12,14 +12,13 @@ public class ModEffects {
 
 	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MODID);
 	public static final RegistryObject<MobEffect> NULLCURSE_EFFECT = EFFECTS.register(NULLCURSE, NullCurseEffect::new);
-	public static final RegistryObject<MobEffect> LIGHTNING_EFFECT = EFFECTS.register(LIGHTING, LightningEffect::new);
-	public static final RegistryObject<MobEffect> GHOST_EFFECT = EFFECTS.register(GHOST, GhostEffect::new);
-	public static final RegistryObject<MobEffect> GLIDE_EFFECT = EFFECTS.register(GLIDE, GlideEffect::new);
+	//	public static final RegistryObject<MobEffect> LIGHTNING_EFFECT = EFFECTS.register(LIGHTING, LightningEffect::new);
+//	public static final RegistryObject<MobEffect> GHOST_EFFECT = EFFECTS.register(GHOST, GhostEffect::new);
+//	public static final RegistryObject<MobEffect> GLIDE_EFFECT = EFFECTS.register(GLIDE, GlideEffect::new);
 	public static final RegistryObject<MobEffect> SNARE_EFFECT = EFFECTS.register(SNARE, SnareEffect::new);
-	public static final RegistryObject<MobEffect> FLY_EFFECT = EFFECTS.register(FLY, FlyEffect::new);
+	//	public static final RegistryObject<MobEffect> FLY_EFFECT = EFFECTS.register(FLY, FlyEffect::new);
 	public static final RegistryObject<MobEffect> GRAVITY_EFFECT = EFFECTS.register(GRAVITY, GravityEffect::new);
 	public static final RegistryObject<MobEffect> BOUNCE_EFFECT = EFFECTS.register(BOUNCE, BounceEffect::new);
-
 	public static final RegistryObject<MobEffect> RECOVERY_EFFECT = EFFECTS.register(RECOVERY, RecoveryEffect::new);
 	public static final RegistryObject<MobEffect> BLAST_EFFECT = EFFECTS.register(BLAST, BlastEffect::new);
 	public static final RegistryObject<MobEffect> FREEZING_EFFECT = EFFECTS.register(FREEZING, FreezingEffect::new);

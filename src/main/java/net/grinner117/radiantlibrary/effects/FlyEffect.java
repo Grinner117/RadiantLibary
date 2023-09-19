@@ -18,13 +18,13 @@ public class FlyEffect extends MobEffect {
 	public boolean isDurationEffectTick(int p_76397_1_, int p_76397_2_) {
 		return true;
 	}
-
-	@Override
-	public void applyEffectTick(LivingEntity entity, int p_76394_2_) {
-		if (entity instanceof Player player) {
-			player.getAbilities().mayfly = (player.isCreative() || entity.isSpectator()) || entity.getEffect(ModEffects.FLY_EFFECT.get()).getDuration() > 2;
-		}
-	}
+//
+//	@Override
+//	public void applyEffectTick(LivingEntity entity, int p_76394_2_) {
+//		if (entity instanceof Player player) {
+//			player.getAbilities().mayfly = (player.isCreative() || entity.isSpectator()) || entity.getEffect(ModEffects.FLY_EFFECT.get()).getDuration() > 2;
+//		}
+//	}
 
 
 	@Override

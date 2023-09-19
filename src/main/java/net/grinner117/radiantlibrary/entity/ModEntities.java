@@ -1,5 +1,6 @@
 package net.grinner117.radiantlibrary.entity;
 
+import net.grinner117.radiantlibrary.lib.LibEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -26,7 +27,7 @@ public class ModEntities {
 	}
 
 
-	public static final RegistryObject<EntityType<LightningEntity>> LIGHTNING_ENTITY = registerEntity(LibEntityNames.AN_LIGHTNING, EntityType.Builder.<LightningEntity>of(LightningEntity::new, MobCategory.MISC)
+	public static final RegistryObject<EntityType<LightningEntity>> LIGHTNING_ENTITY = registerEntity(LibEntities.LIGHTINGBOLT, EntityType.Builder.<LightningEntity>of(LightningEntity::new, MobCategory.MISC)
 			.sized(0.0F, 0.0F)
 			.clientTrackingRange(16)
 			.updateInterval(Integer.MAX_VALUE

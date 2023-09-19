@@ -2,6 +2,7 @@ package net.grinner117.radiantlibrary;
 
 import com.mojang.logging.LogUtils;
 import net.grinner117.radiantlibrary.effects.ModEffects;
+import net.grinner117.radiantlibrary.entity.ModEntities;
 import net.grinner117.radiantlibrary.event.ClientEventHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSourceStack;
@@ -36,6 +37,7 @@ public class RadiantLibrary {
 		MinecraftForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::commonSetup);
 		ModEffects.EFFECTS.register(modEventBus);
+		ModEntities.ENTITIES.register(modEventBus);
 	}
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
@@ -53,6 +55,8 @@ public class RadiantLibrary {
 	public void setup(final FMLCommonSetupEvent event) {
 		net.grinner117.radiantlibrary.networking.network.Networking.registerMessages();
 		event.enqueueWork(ModEffects::addRecipes);
+		event.enqueueWork(ModEntities::registerPlacements);
+
 		event.enqueueWork(() -> {
 
 		});
