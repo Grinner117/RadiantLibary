@@ -3,7 +3,7 @@ Specification-Title: radiantlibrary
 Specification-Vendor: radiantlibrarysareus
 Specification-Version: 1
 Implementation-Title: RadiantLibrary
-Implementation-Version: 1.19.2 - 1.1
+Implementation-Version: 1.19.2 - 1.2
 Implementation-Vendor: radiantlibrarysareus
-Implementation-Timestamp: 2023-09-19T16:09:45+1000
+Implementation-Timestamp: 2023-09-20T20:36:43+1000
 

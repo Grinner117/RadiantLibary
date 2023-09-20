@@ -8,7 +8,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 public class SnareEffect extends MobEffect {
 
 	public SnareEffect() {
-		super(MobEffectCategory.HARMFUL, 2039587);
+		super(MobEffectCategory.HARMFUL, 3328);
 		addAttributeModifier(Attributes.MOVEMENT_SPEED, "0dee8a21-f182-42c8-8361-1ad6186cac30", -1, AttributeModifier.Operation.MULTIPLY_TOTAL);
 	}
 
